@@ -157,7 +157,8 @@
 						  <h4 class="card-title">Timesketch (Google's Repository)</h4>
 						<p> Open Source Contribution</p>
 						  <p class="card-text">Solved an error in Google's Timesketch tool by checking CSV with the wrong extension on the UI side.</p>
-						  <a href="https://github.com/google/timesketch/pull/2147" class="btn btn-secondary">Github PR Link</a>					
+						  <a href="https://github.com/google/timesketch/pull/2147" class="btn btn-secondary">Github PR Link</a>
+						  <button onclick="onGoogle()" class="btn btn-secondary">Read more</button>					
 						</div>
 					</div>
 				</div>
@@ -169,7 +170,8 @@
 						<div class="card-body">
 						  <h4 class="card-title">Pokemon Guesser</h4>
 						  <p class="card-text">Quiz app to guess who's that Pokemon. Questions data gathered from PokeAPI.</p>
-						  <a href="https://github.com/rishav-karanjit/Pokemon-Guesser" class="btn btn-secondary">Github</a>					
+						  <a href="https://github.com/rishav-karanjit/Pokemon-Guesser" class="btn btn-secondary">Github</a>
+						  <button onclick="onPokemon()" class="btn btn-secondary">Read more</button>					
 						</div>
 					</div>
 				</div>
@@ -187,6 +189,7 @@
 						  <h4 class="card-title">Automatic Essay Grader</h4>
 						  <p class="card-text">Grades essay based on rhetoric, style, correct usage and many other factors.</p>
 						  <a href="https://github.com/rishav-karanjit/Essay-Grader" class="btn btn-secondary">Github</a>					
+						  <button onclick="onAES()" class="btn btn-secondary">Read more</button>	
 						</div>
 					</div>
 				</div>
@@ -198,6 +201,7 @@
 						  <h4 class="card-title">Jobify : A Job Portal</h4>
 						  <p class="card-text">Post and apply for vacancy and get suggestion of vacancy based on the job-seeker's profile</p>
 						  <a href="https://github.com/rishav-karanjit/Job-Portal" class="btn btn-secondary">Github</a>					
+						  <button onclick="onJobify()" class="btn btn-secondary">Read more</button>	
 						</div>
 					</div>
 				</div>
@@ -254,7 +258,7 @@
           					<div class="timeline-badge danger"><i class="glyphicon glyphicon-check"></i></div>
           					<div class="timeline-panel">
             					<div class="timeline-heading">
-              						<h4 class="timeline-title">Graduate Research Assistant</h4>
+              						<a style="text-decoration:none;" class="h4 timeline-title" onclick="onGRA()">Graduate Research Assistant</a>
               						<p><small class="text-muted"><i class="glyphicon glyphicon-time"></i>Clemson University (Jan 2022 - Present)</small></p>
             					</div>
 								<!--
@@ -269,8 +273,8 @@
           					<div class="timeline-badge warning"><i class="glyphicon glyphicon-credit-card"></i></div>
           						<div class="timeline-panel">
             						<div class="timeline-heading">
-              						<h4 class="timeline-title">Software Development Intern</h4>
-              						<p><small class="text-muted"><i class="glyphicon glyphicon-time"></i>DeerWalk Compware (June 2019 - July 2019)</small></p>
+              						<a style="text-decoration:none;" class="h4 timeline-title" onclick="onIntern()">Software Development Intern</a>
+              						<p><small class="text-muted"><i class="glyphicon glyphicon-time"></i>Deerhold Pvt. Ltd (June 2019 - July 2019)</small></p>
             					</div>
 <!--             					<div class="timeline-body">
               						<p></p>
@@ -301,6 +305,100 @@
 
 	</footer>
 
+
+
+	<div id="overlayGoogle" onclick="offGoogle()">
+		
+		<div id="text">
+				<img class="mx-auto d-block" src="https://avatars.githubusercontent.com/u/1342004?s=200&v=4">
+				
+				<p class="h4 text-center">
+					Timesketch (Google's Repository)
+				</p>
+				<ul>
+					<li>Solved an error in Google's Timesketch tool by checking CSV with the wrong extension on the UI side.</li>
+					<li>Collaborated with Google's software developer to close an <a href="https://github.com/google/timesketch/issues/2064">issue</a></li>
+					<li>Tools: Vue.js</li>
+				</ul> 	 
+		</div>
+	</div>
+
+	<div id="overlayPokemon" onclick="offPokemon()">
+		
+		<div id="text">
+				<img class="mx-auto d-block pt-2" src="./Images/pokemonguesser.gif">
+				
+				<p class="h4 text-center">
+					Pokemon Guesser
+				</p>
+				<ul>
+					<li>Teamed with 2 other students to devise a quiz game that gets questions from the Pokemon API for the users to guess who that Pokemon is.</li>
+					<li>Conducted one scrum meeting weekly and maintained the project board on GitHub for proper planning for the project.</li>
+					<li>Tools: Python, GitHub (for stand-ups and project board).</li>
+				</ul> 	 
+		</div>
+	</div>
+
+	<div id="overlayAES" onclick="offAES()">
+		
+		<div id="text">
+				<img class="mx-auto d-block pt-2 card-img-top" src="./Images/Essay.gif">
+				
+				<p class="h4 text-center">
+					Automatic Essay Grading (AES)
+				</p>
+				<ul>
+					<li>Incorporated an ensemble learning algorithm and a hard voting classifier to correctly grade the essay with more than 90% performance compared to the human grader.</li>
+					<li>Checked grammatical errors in an essay using language tool API and NLP to extract word details in an article.</li>
+					<li>Tools: Python, PyQt5, CSS, Machine Learning Algorithms like Random Forest, KNN, SVM, Logistic regression, and XG Boost algorithm.</li>
+				</ul> 	 
+		</div>
+	</div>
+
+	<div id="overlayJobify" onclick="offJobify()">
+		
+		<div id="text">
+				<img class="mx-auto d-block pt-2" style="height:50vh" src="./Images/Jobportal.png"> 
+				
+				<p class="h4 text-center">
+					Jobify : A Job Portal
+				</p>
+				<ul>
+					<li>Constructed a job portal for an easier recruiting process where recruiters and job seekers apply for or create job vacancies and receive suggested job vacancies, connections, and vacancy notifications.</li>
+					<li>Tools: Python, HTML, CSS, JavaScript.</li>
+				</ul> 	 
+		</div>	
+	</div>
+
+	<div id="overlayGRA" onclick="offGRA()">
+		
+		<div id="text" style="padding:5%;">				
+				<p class="h4 text-center">
+					Graduate Research Assistant
+				</p>
+				<ul>
+					<li>Implemented the machine learning algorithm LSTM to increase the flood prediction model's performance to more than 85%.</li>
+					<li>Deployed a web application on the IBM cloud VPC.</li>
+					<li>Found more than 40 accessibility issues and resolved them to meet WCAG 2.1 Level AA conformance.</li>
+					<li>Tools: Python, HTML, CSS, JavaScript, Linux, VPC, VSI.</li>	
+				</ul> 	 
+		</div>	
+	</div>
+
+	<div id="overlayIntern" onclick="offIntern()">
+		
+		<div id="text" style="padding:5%;">				
+				<p class="h4 text-center">
+					Software Development Intern
+				</p>
+				<ul>
+					<li>Applied Model View Template pattern to create a website containing a contact directory of employees, which provided an easy way to search employee information by any company employee.</li>
+					<li>Debugged more than 30 errors in Django projects to increase usability, reliability, and efficiency.</li>
+					<li>Tools: Python, Django, HTML, CSS, JavaScript.</li>
+				</ul> 	 
+		</div>	
+	</div>
+
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 	<!-- jQuery Waypoints -->
 	<script src="./JS/jquery.waypoints.min.js"></script>
@@ -309,6 +407,7 @@
 	
 	<script src="./JS/Waypoints.js"></script>
 	
+	<script src="./JS/ProjectsDetails.js"></script>
 	<script src="./JS/changeactive.js"></script>
 
 	<script src="./JS/typed.min.js"></script>
