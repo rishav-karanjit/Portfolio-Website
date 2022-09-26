@@ -45,3 +45,11 @@ function onIntern() {
 function offIntern() {
     document.getElementById("overlayIntern").style.display = "none";
 }
+
+function onMS() {
+    document.getElementById("overlayMS").style.display = "block";
+}
+
+function offMS() {
+    document.getElementById("overlayMS").style.display = "none";
+}
