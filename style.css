@@ -5,11 +5,11 @@
 }
 
 :root {
-  --bg: #f2f2f0;
-  --surface: #e8e8e6;
+  --bg: #d9d9d6;
+  --surface: #cfcfcc;
   --text: #1a1a1a;
-  --text-muted: #888888;
-  --border: #ddddd8;
+  --text-muted: #777770;
+  --border: #c4c4c0;
 }
 
 html {
