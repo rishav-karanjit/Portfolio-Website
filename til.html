@@ -33,8 +33,17 @@
 
           <article class="til-item">
             <time class="til-date">2025</time>
+            <h2 class="til-heading">Always use a cryptographically secure random number generator</h2>
+            <p class="til-body">
+              Standard RNGs (like Math.random() or java.util.Random) are not designed for security — they're predictable if an attacker knows the seed. For anything cryptographic always use a CSPRNG (e.g. SecureRandom in Java).</p>
+          </article>
+
+          <article class="til-item">
+            <time class="til-date">2025</time>
             <h2 class="til-heading">AES-GCM is not key-committing by default</h2>
-            <p class="til-body">AES-GCM doesn't commit to the key — one ciphertext can decrypt validly under two different keys. This opens the door to key substitution attacks. </p>
+            <p class="til-body">
+              AES-GCM doesn't commit to the key — one ciphertext can decrypt validly under two different keys. This opens the door to key substitution attacks.
+            </p>
           </article>
 
         </div>
