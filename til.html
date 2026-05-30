@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TIL — Rishav Karanjit</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav>
+    <a href="index.html" class="logo">RK</a>
+    <ul>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+      <li><a href="til.html" class="nav-active">TIL</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section id="til-hero">
+      <div class="container">
+        <h1 class="til-title">Today I Learned</h1>
+        <p class="role">A running log of things I pick up.</p>
+      </div>
+    </section>
+
+    <section id="til-entries">
+      <div class="container">
+        <div class="til-list">
+
+          <article class="til-item">
+            <time class="til-date">2025</time>
+            <h2 class="til-heading">AES-GCM is not key-committing by default</h2>
+            <p class="til-body">AES-GCM doesn't commit to the key — one ciphertext can decrypt validly under two different keys. This opens the door to key substitution attacks. </p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <span>© 2026 Rishav Karanjit</span>
+    </div>
+  </footer>
+</body>
+</html>
