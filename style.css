@@ -261,6 +261,15 @@ section:not(#hero) {
   max-width: 540px;
 }
 
+.til-link {
+  color: var(--text);
+  text-underline-offset: 3px;
+}
+
+.til-link:hover {
+  color: var(--text-muted);
+}
+
 .nav-active {
   color: var(--text) !important;
 }

@@ -48,12 +48,14 @@
             <time class="til-date">2025</time>
             <h2 class="til-heading">AES-GCM is not key-committing by default</h2>
             <p class="til-body">
-              AES-GCM doesn't commit to the key — one ciphertext can decrypt validly under two different keys. This opens the door to key substitution attacks.
+              AES-GCM doesn't commit to the key — one ciphertext can decrypt validly under two different keys. This opens the door to key substitution attacks. 
+              
+              For example, see this <a class="til-link" href="https://aws.amazon.com/security/security-bulletins/AWS-2025-032/" target="_blank" rel="noopener">security bulletin for S3 Encryption Client</a>.
             </p>
           </article>
 
           <article class="til-item">
-            <time class="til-date">2025</time>
+            <time class="til-date">2024</time>
             <h2 class="til-heading">Key rotation is about blast radius, not brute-force odds</h2>
             <p class="til-body">The primary purpose of rotating encryption keys is not to decrease the probability of a key being broken — it's to limit how much data is exposed if a key is compromised. Rotate frequently so that any single key covers less ciphertext, and a breach leaks less.</p>
           </article>
