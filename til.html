@@ -32,12 +32,6 @@
         <div class="til-list">
 
           <article class="til-item">
-            <time class="til-date">2026-05-30</time>
-            <h2 class="til-heading">Decrypt caches are much harder to hit than encrypt caches in envelope encryption</h2>
-            <p class="til-body">In envelope encryption, each GenerateDataKey call produces a unique data key per message. Every distinct ciphertext you decrypt requires a fresh KMS call — making the decrypt cache key space far larger and less reusable than the encrypt side, where the same data key can be reused across many messages.</p>
-          </article>
-
-          <article class="til-item">
             <time class="til-date">2025</time>
             <h2 class="til-heading">Think twice before deleting an encryption key</h2>
             <p class="til-body">Deleting a key is permanent and catastrophic — any data encrypted with it becomes unrecoverable. Before deleting, ask: is there data still encrypted under this key? Is it cached anywhere and could still be used? AWS KMS reflects this reality by refusing immediate deletion entirely — it only allows scheduling deletion with a mandatory waiting period, giving you time to catch mistakes.</p>
@@ -72,6 +66,17 @@
             <p class="til-body">The primary purpose of rotating encryption keys is not to decrease the probability of a key being broken — it's to limit how much data is exposed if a key is compromised. Rotate frequently so that any single key covers less ciphertext, and a breach leaks less.</p>
           </article>
 
+          <article class="til-item">
+            <time class="til-date">2024</time>
+            <h2 class="til-heading">The Hierarchical Keyring in AWS ESDK solves the encrypt/decrypt cache asymmetry because HKDF is deterministic</h2>
+            <p class="til-body">Instead of calling KMS:GenerateDataKey (non-deterministic) per message, the Hierarchical Keyring derives data keys locally using HKDF from a branch key. Because HKDF is deterministic, both the encrypt and decrypt paths derive the same data key from the same branch key — anchoring both paths to the same low-cardinality branch key ID rather than a unique EDK per message.</p>
+          </article>
+
+          <article class="til-item">
+            <time class="til-date">2024</time>
+            <h2 class="til-heading">Decrypt caches are much harder to hit than encrypt caches in envelope encryption</h2>
+            <p class="til-body">In envelope encryption, each KMS:GenerateDataKey call produces a unique data key per message. Every distinct ciphertext you decrypt requires a fresh KMS call — making the decrypt cache key space far larger and less reusable than the encrypt side, where the same data key can be reused across many messages.</p>
+          </article>
         </div>
       </div>
     </section>
