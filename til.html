@@ -33,6 +33,12 @@
 
           <article class="til-item">
             <time class="til-date">2025</time>
+            <h2 class="til-heading">Think twice before deleting an encryption key</h2>
+            <p class="til-body">Deleting a key is permanent and catastrophic — any data encrypted with it becomes unrecoverable. Before deleting, ask: is there data still encrypted under this key? Is it cached anywhere and could still be used? AWS KMS reflects this reality by refusing immediate deletion entirely — it only allows scheduling deletion with a mandatory waiting period, giving you time to catch mistakes.</p>
+          </article>
+
+          <article class="til-item">
+            <time class="til-date">2025</time>
             <h2 class="til-heading">Always use constant-time comparison for secret values</h2>
             <p class="til-body">Regular equality checks (==, .equals()) short-circuit on the first mismatched byte — an attacker can measure response times to learn how many bytes matched, leaking the secret one byte at a time. Always use a constant-time comparison when checking MACs, tokens, or passwords.</p>
           </article>
