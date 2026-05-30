@@ -1,0 +1,60 @@
+// ── Add new TIL entries here ──────────────────────────────────────────────
+const TIL = [
+  {
+    date: "2026",
+    category: "software-engineering",
+    tag: "Software Engineering",
+    heading: "Team productivity matters more than individual productivity",
+    body: "An individual can multiply their output with AI — shipping pull requests faster than ever. But if the team can't review and merge them fast enough, that output stacks up as unmerged work with no real value. Productivity is only realized when the team moves together. SDEs should optimize for team throughput, not personal output."
+  },
+  {
+    date: "2025",
+    category: "cryptography",
+    tag: "Cryptography",
+    heading: "Think twice before deleting an encryption key",
+    body: "Deleting a key is permanent and catastrophic — any data encrypted with it becomes unrecoverable. Before deleting, ask: is there data still encrypted under this key? Is it cached anywhere and could still be used? AWS KMS reflects this reality by refusing immediate deletion entirely — it only allows scheduling deletion with a mandatory waiting period, giving you time to catch mistakes."
+  },
+  {
+    date: "2025",
+    category: "cryptography",
+    tag: "Cryptography",
+    heading: "Always use constant-time comparison for secret values",
+    body: "Regular equality checks (==, .equals()) short-circuit on the first mismatched byte — an attacker can measure response times to learn how many bytes matched, leaking the secret one byte at a time. Always use a constant-time comparison when checking MACs, tokens, or passwords."
+  },
+  {
+    date: "2025",
+    category: "cryptography",
+    tag: "Cryptography",
+    heading: "Always use a cryptographically secure random number generator",
+    body: "Standard RNGs (like Math.random() or java.util.Random) are not designed for security — they're predictable if an attacker knows the seed. For anything cryptographic always use a CSPRNG (e.g. SecureRandom in Java)."
+  },
+  {
+    date: "2025",
+    category: "cryptography",
+    tag: "Cryptography",
+    heading: "AES-GCM is not key-committing by default",
+    body: 'AES-GCM doesn\'t commit to the key — one ciphertext can decrypt validly under two different keys. This opens the door to key substitution attacks. For example, see this <a class="til-link" href="https://aws.amazon.com/security/security-bulletins/AWS-2025-032/" target="_blank" rel="noopener">security bulletin for S3 Encryption Client</a>.'
+  },
+  {
+    date: "2024",
+    category: "cryptography",
+    tag: "Cryptography",
+    heading: "Key rotation is about blast radius, not brute-force odds",
+    body: "The primary purpose of rotating encryption keys is not to decrease the probability of a key being broken — it's to limit how much data is exposed if a key is compromised. Rotate frequently so that any single key covers less ciphertext, and a breach leaks less."
+  },
+  {
+    date: "2024",
+    category: "cryptography",
+    tag: "Cryptography",
+    heading: "The Hierarchical Keyring in AWS ESDK solves the encrypt/decrypt cache asymmetry because HKDF is deterministic",
+    body: "Instead of calling KMS:GenerateDataKey (non-deterministic) per message, the Hierarchical Keyring derives data keys locally using HKDF from a branch key. Because HKDF is deterministic, both the encrypt and decrypt paths derive the same data key from the same branch key — anchoring both paths to the same low-cardinality branch key ID rather than a unique EDK per message."
+  },
+  {
+    date: "2024",
+    category: "cryptography",
+    tag: "Cryptography",
+    heading: "Decrypt caches are much harder to hit than encrypt caches in envelope encryption",
+    body: "In envelope encryption, each KMS:GenerateDataKey call produces a unique data key per message. Every distinct ciphertext you decrypt requires a fresh KMS call — making the decrypt cache key space far larger and less reusable than the encrypt side, where the same data key can be reused across many messages."
+  },
+];
+// ─────────────────────────────────────────────────────────────────────────────
