@@ -33,6 +33,12 @@
 
           <article class="til-item">
             <time class="til-date">2025</time>
+            <h2 class="til-heading">Always use constant-time comparison for secret values</h2>
+            <p class="til-body">Regular equality checks (==, .equals()) short-circuit on the first mismatched byte — an attacker can measure response times to learn how many bytes matched, leaking the secret one byte at a time. Always use a constant-time comparison when checking MACs, tokens, or passwords.</p>
+          </article>
+
+          <article class="til-item">
+            <time class="til-date">2025</time>
             <h2 class="til-heading">Always use a cryptographically secure random number generator</h2>
             <p class="til-body">
               Standard RNGs (like Math.random() or java.util.Random) are not designed for security — they're predictable if an attacker knows the seed. For anything cryptographic always use a CSPRNG (e.g. SecureRandom in Java).</p>
