@@ -32,6 +32,12 @@
         <div class="til-list">
 
           <article class="til-item">
+            <time class="til-date">2026-05-30</time>
+            <h2 class="til-heading">Decrypt caches are much harder to hit than encrypt caches in envelope encryption</h2>
+            <p class="til-body">In envelope encryption, each GenerateDataKey call produces a unique data key per message. Every distinct ciphertext you decrypt requires a fresh KMS call — making the decrypt cache key space far larger and less reusable than the encrypt side, where the same data key can be reused across many messages.</p>
+          </article>
+
+          <article class="til-item">
             <time class="til-date">2025</time>
             <h2 class="til-heading">Think twice before deleting an encryption key</h2>
             <p class="til-body">Deleting a key is permanent and catastrophic — any data encrypted with it becomes unrecoverable. Before deleting, ask: is there data still encrypted under this key? Is it cached anywhere and could still be used? AWS KMS reflects this reality by refusing immediate deletion entirely — it only allows scheduling deletion with a mandatory waiting period, giving you time to catch mistakes.</p>
